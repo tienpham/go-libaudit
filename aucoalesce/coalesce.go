@@ -405,9 +405,7 @@ func addExecveRecord(execve *auparse.AuditMessage, event *Event) {
 
 		arg, found := data[key]
 		if !found {
-			event.Warnings = append(event.Warnings, errors.Errorf(
-				"failed to find arg %v", key))
-			return
+			continue
 		}
 
 		delete(data, key)
