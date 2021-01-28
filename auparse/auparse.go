@@ -499,7 +499,7 @@ func execveArgs(data map[string]*field) error {
 
 		arg, found := data[key]
 		if !found {
-			return errors.Errorf("failed to find arg %v", key)
+			continue
 		}
 
 		if ascii, err := hexToString(arg.Orig()); err == nil {
